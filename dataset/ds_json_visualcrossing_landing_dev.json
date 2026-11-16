@@ -5,6 +5,17 @@
 			"referenceName": "ls_adsg2_atimos_dev",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"city": {
+				"type": "string"
+			},
+			"date": {
+				"type": "string"
+			},
+			"file_name": {
+				"type": "string"
+			}
+		},
 		"folder": {
 			"name": "VisualCrossing"
 		},
@@ -12,7 +23,15 @@
 		"type": "Json",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation"
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().file_name",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@concat(\n    'landing/visualcrossing/',\n    dataset().city,\n    '/year=', formatDateTime(dataset().date, 'yyyy'),\n    '/month=', formatDateTime(dataset().date, 'MM'),\n    '/day=', formatDateTime(dataset().date, 'dd')\n)",
+					"type": "Expression"
+				}
 			}
 		},
 		"schema": {}
