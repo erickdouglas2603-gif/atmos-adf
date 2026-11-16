@@ -67,12 +67,33 @@
 								"type": "Expression"
 							},
 							"file_name": {
-								"value": "@toLower(concat('atmos_', pipeline().parameters.city, '_', formatDateTime(utcNow(), 'yyyyMMddHHmmss'), '.json'))",
+								"value": "@concat('atmos_', pipeline().parameters.city, '_', formatDateTime(utcNow(), 'yyyyMMddHHmmss'), '.json')",
 								"type": "Expression"
 							}
 						}
 					}
 				]
+			},
+			{
+				"name": "web_get_apikey",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "GET",
+					"url": "https://kv-atmos-dev-westus2-002.vault.azure.net/secrets/visualcrossing-api-dev/64b922f5a9974c87b8eaf034468c9f8f",
+					"authentication": {
+						"type": "MSI",
+						"resource": "https://vault.azure.net/.default"
+					}
+				}
 			}
 		],
 		"parameters": {
