@@ -5,6 +5,8 @@
 			{
 				"name": "copy_visualcrossing_to_landing",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -91,7 +93,7 @@
 					"url": "https://kv-atmos-dev-westus2-002.vault.azure.net/secrets/visualcrossing-api-dev/64b922f5a9974c87b8eaf034468c9f8f",
 					"authentication": {
 						"type": "MSI",
-						"resource": "https://vault.azure.net/.default"
+						"resource": "https://vault.azure.net"
 					}
 				}
 			}
