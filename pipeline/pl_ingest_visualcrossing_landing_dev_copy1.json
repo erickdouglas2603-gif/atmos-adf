@@ -61,6 +61,11 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@variables('date_list')",
+						"type": "Expression"
+					},
+					"batchCount": 15,
 					"activities": [
 						{
 							"name": "copy_visualcrossing_to_landing",
@@ -106,7 +111,7 @@
 											"type": "Expression"
 										},
 										"date": {
-											"value": "@variables('date')",
+											"value": "@formatDateTime(addDays(pipeline().parameters.startDate,item(),'yyyy-MM-dd'))",
 											"type": "Expression"
 										},
 										"apiKey": {
