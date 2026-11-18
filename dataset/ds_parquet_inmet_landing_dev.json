@@ -1,5 +1,5 @@
 {
-	"name": "ds_csv_inmet_landing_dev",
+	"name": "ds_parquet_inmet_landing_dev",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_adsg2_atimos_dev",
