@@ -3,37 +3,9 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "web_get_apikey",
-				"type": "WebActivity",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"method": "GET",
-					"url": "https://kv-atmos-dev-westus2-002.vault.azure.net/secrets/visualcrossing-api-dev/64b922f5a9974c87b8eaf034468c9f8f?api-version=7.4",
-					"authentication": {
-						"type": "MSI",
-						"resource": "https://vault.azure.net"
-					}
-				}
-			},
-			{
 				"name": "set_year_list",
 				"type": "SetVariable",
-				"dependsOn": [
-					{
-						"activity": "web_get_apikey",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"secureOutput": false,
 					"secureInput": false
@@ -72,8 +44,8 @@
 							"dependsOn": [],
 							"policy": {
 								"timeout": "0.12:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
+								"retry": 3,
+								"retryIntervalInSeconds": 60,
 								"secureOutput": false,
 								"secureInput": false
 							},
@@ -100,7 +72,7 @@
 									"type": "TabularTranslator",
 									"typeConversion": true,
 									"typeConversionSettings": {
-										"allowDataTruncation": true,
+										"allowDataTruncation": false,
 										"treatBooleanAsNumber": false
 									}
 								}
