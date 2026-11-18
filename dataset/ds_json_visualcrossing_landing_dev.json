@@ -31,7 +31,8 @@
 				"folderPath": {
 					"value": "@toLower(concat(\n    'landing/visualcrossing/',\n    dataset().city,\n    '/year=', formatDateTime(dataset().date, 'yyyy'),\n    '/month=', formatDateTime(dataset().date, 'MM'),\n    '/day=', formatDateTime(dataset().date, 'dd')\n))",
 					"type": "Expression"
-				}
+				},
+				"fileSystem": "atmos-landing-dev-001"
 			}
 		},
 		"schema": {}
