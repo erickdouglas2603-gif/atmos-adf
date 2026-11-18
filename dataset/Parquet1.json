@@ -1,0 +1,24 @@
+{
+	"name": "Parquet1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adsg2_atimos_dev",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "INMET"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "@dataset().file_name",
+				"folderPath": "@toLower(     concat(         'landing/inmet/ano=',         dataset().ano     )  )",
+				"fileSystem": "atmos-landing-dev-001"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
