@@ -21,8 +21,14 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "@dataset().file_name",
-				"folderPath": "@toLower(     concat(         'landing/inmet/ano=',         dataset().ano     )  )",
+				"fileName": {
+					"value": "@dataset().file_name",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@toLower(concat('landing/inmet/ano=',dataset().ano))",
+					"type": "Expression"
+				},
 				"fileSystem": "atmos-landing-dev-001"
 			},
 			"compressionCodec": "snappy"
