@@ -5,6 +5,14 @@
 			"referenceName": "ls_adsg2_atimos_dev",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"ano": {
+				"type": "string"
+			},
+			"file_name": {
+				"type": "string"
+			}
+		},
 		"folder": {
 			"name": "INMET"
 		},
