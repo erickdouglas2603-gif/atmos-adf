@@ -41,7 +41,11 @@
 				"inputs": [
 					{
 						"referenceName": "ds_bigquey_inmet_src_dev",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"id_estacao": "nao_usado",
+							"ano": 0
+						}
 					}
 				],
 				"outputs": [
