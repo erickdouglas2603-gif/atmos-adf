@@ -1,0 +1,21 @@
+{
+	"name": "ds_parquet_inmet_estacao_landing_dev",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adsg2_atimos_dev",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "estacao.parquet",
+				"folderPath": "landing/inmet/estacao",
+				"fileSystem": "atmos-landing-dev-001"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
