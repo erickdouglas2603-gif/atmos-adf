@@ -1,5 +1,5 @@
 {
-	"name": "pl_ingest_inmet_landing_dev_estacao",
+	"name": "pl_ingest_inmet_estacao_landing_dev",
 	"properties": {
 		"activities": [
 			{
